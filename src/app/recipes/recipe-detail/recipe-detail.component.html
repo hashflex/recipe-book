@@ -1,23 +1,23 @@
 <div class="row">
-	<div class="col-xs-12">
-		<div class="card mb-3">
-			<img class="card-img-top" src="{{ recipe.imagePath }}" alt="{{ recipe.name }}">
-			<div class="card-body">
-				<h4 class="card-title">{{ recipe.name }}</h4>
-				<p class="card-text">{{ recipe.description }}</p>
-				<p class="card-text">Ingredients</p>
-				<div class="dropdown show">
-				  <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Manage Recipe
-				  </a>
-
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				    <a class="dropdown-item" href="#">Add to shopping list</a>
-				    <a class="dropdown-item" href="#">Edit</a>
-				    <a class="dropdown-item" href="#">Delete</a>
-				  </div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="col-xs-12">
+    <div class="card mb-3">
+      <img class="card-img-top" src="{{ recipe.imagePath }}" alt="{{ recipe.name }}">
+      <div class="card-body">
+        <h4 class="card-title">{{ recipe.name }}</h4>
+        <p class="card-text">{{ recipe.description }}</p>
+        <p class="card-text">Ingredients</p>
+        <div class="dropdown show">
+          <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            Manage Recipe
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Add to shopping list</a>
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
