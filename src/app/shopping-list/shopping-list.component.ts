@@ -14,10 +14,25 @@ export class ShoppingListComponent implements OnInit {
   ];
 
   constructor() {
-    console.log(this.ingredients);
   }
 
   ngOnInit() {
   }
 
+  onIngredientAdded(ingredient: Ingredient) {
+    let incremented = false;
+
+    Object.keys(this.ingredients).forEach(key => {
+      if ( this.ingredients[key].name === ingredient.name ) {
+        incremented = true;
+        const existingAmount = +this.ingredients[key].amount;
+        const newAmount = +ingredient.amount;
+        this.ingredients[key].amount = existingAmount + newAmount;
+      }
+    });
+
+    if ( !incremented ) {
+      this.ingredients.push(ingredient);
+    }
+  }
 }

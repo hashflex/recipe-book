@@ -1,28 +1,25 @@
 <div class="row">
   <div class="col-md-12 m-3">
-    <form>
-
       <div class="row">
         <div class="col-md-5">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
-                   placeholder="Enter ingredient">
+                   placeholder="Enter ingredient" #nameInput>
             <small id="nameHelp" class="form-text text-muted">Enter name of the ingredient</small>
           </div>
         </div>
         <div class="col-md-2">
           <div class="form-group">
             <label for="amount">Amount</label>
-            <input type="number" class="form-control" id="amount">
+            <input type="number" class="form-control" id="amount" #amountInput >
           </div>
         </div>
       </div>
+
       <!-- Add action buttons -->
-      <button type="submit" class="btn btn-primary">Add</button>
+      <button type="submit" class="btn btn-primary" (click)="onAddItem()">Add</button>
       <button type="button" class="btn btn-danger">Delete</button>
       <button type="button" class="btn btn-outline-danger">Clear</button>
-
-    </form>
   </div>
 </div>
