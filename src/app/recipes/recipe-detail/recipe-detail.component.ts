@@ -11,6 +11,7 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('Hey there');
   }
 
 }
