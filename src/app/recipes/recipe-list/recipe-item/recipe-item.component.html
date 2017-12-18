@@ -1,0 +1,13 @@
+<div type="button" class="list-group-item list-group-item-action mb-1 recipe-list-item clearfix">
+  <div class="float-left">
+    <h4 class="list-group-item-heading">
+      {{ recipe.name }}
+    </h4>
+    <div class="list-group-item-text">
+      {{ recipe.description }}
+    </div>
+  </div>
+  <div class="float-right">
+    <img src="{{ recipe.imagePath }}" style="max-height: 50px;" alt="{{ recipe.name }}">
+  </div>
+</div>
