@@ -4,17 +4,26 @@
       <img class="card-img-top" src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" height="300px">
       <div class="card-body">
         <h4 class="card-title">{{ recipe.name }}</h4>
-        <p class="card-text">{{ recipe.description }}</p>
-        <p class="card-text">Ingredients</p>
+        <div class="card-text">{{ recipe.description }}</div>
+        <div class="card-text">
+          For preparing this you need below items
+          <ul class="list-group m-2">
+            <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+              {{ingredient.name}} - {{ ingredient.amount}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-footer">
         <div class="dropdown" appDropdown>
-          <button class="btn btn-primary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn btn-primary dropdown-toggle" role="button" data-toggle="dropdown">
             Manage Recipe
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <button class="dropdown-item">Add to shopping list</button>
-            <button class="dropdown-item">Edit</button>
-            <button class="dropdown-item">Delete</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" (click)="onAddToShoppingList()" role="button" data-toggle="dropdown">Add to
+              shopping list</a>
+            <a class="dropdown-item" data-toggle="dropdown">Edit</a>
+            <a class="dropdown-item" data-toggle="dropdown">Delete</a>
           </div>
         </div>
       </div>

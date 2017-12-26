@@ -20,21 +20,31 @@ export class ShoppingListService {
 
   public addIngredient(ingredient: Ingredient): boolean {
     let incremented = false;
+    const newIngredient = {...ingredient}; // create a new instance
 
     Object.keys(this.ingredients).forEach(key => {
-      if ( this.ingredients[key].name === ingredient.name ) {
+      if ( this.ingredients[key].name === newIngredient.name ) {
         incremented = true;
         const existingAmount = +this.ingredients[key].amount;
-        const newAmount = +ingredient.amount;
+        const newAmount = +newIngredient.amount;
         this.ingredients[key].amount = existingAmount + newAmount;
       }
     });
 
     if ( !incremented ) {
-      this.ingredients.push(ingredient);
+      this.ingredients.push(newIngredient);
     }
 
     this.ingredientChanged.emit(this.getIngredients());
+
+    return true;
+  }
+
+  public addIngredients(ingredients: Ingredient[]): boolean {
+
+    for ( const ingredient of ingredients ) {
+      this.addIngredient(ingredient);
+    }
 
     return true;
   }
